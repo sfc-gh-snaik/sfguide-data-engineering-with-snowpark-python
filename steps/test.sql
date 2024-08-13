@@ -4,7 +4,7 @@ USE WAREHOUSE SNAIK;
 CREATE OR REPLACE TABLE inventory (product_ID INTEGER, wholesale_price FLOAT,
   description VARCHAR);
     
-CREATE OR REPLACE MATERIALIZED VIEW mv1 AS
+CREATE OR REPLACE VIEW mv1 AS
   SELECT product_ID, SUM(wholesale_price)sum_wholesale_price FROM inventory group by 1;
 
 INSERT INTO inventory
